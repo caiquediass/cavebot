@@ -15,7 +15,8 @@ This BOT ins't ready yet, this BOT still under construction.
 Be free to use any function to create your custom BOT or wait for the release of v0.
 
 
- V0 Features
+
+V0 Features
 Only available for knights
 
 Cavebot ⚠️
