@@ -1,0 +1,35 @@
+from time import sleep
+from tkinter import image_names
+import pyautogui as pya
+import os
+
+LOW_LIFE_X = 1790
+LOW_LIFE_Y = 310
+MEDIUM_LIFE_X = 1820
+FULL_LIFE_X = 1850
+RGB_EXP_MAX_VAL = 255
+RGB_EXP_EMPTY_VAL = 100
+GLOBAL_CD = 1
+
+
+def wait_for_global_cd():
+    sleep(GLOBAL_CD)
+    return None
+
+
+def get_rgb_from_coord(x, y):
+
+    return pya.screenshot().getpixel((x, y))
+
+
+def cura():
+    thresholds = [LOW_LIFE_X, MEDIUM_LIFE_X, FULL_LIFE_X]
+    for thresh in thresholds:
+        px = get_rgb_from_coord(thresh, LOW_LIFE_Y)
+    if px[0] == RGB_EXP_EMPTY_VAL:
+        pya.press('f1')
+        for _ in range(5):
+            print("press f1")
+            wait_for_global_cd()
+            break
+    return None

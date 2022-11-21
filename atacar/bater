@@ -1,0 +1,28 @@
+from time import sleep
+from tkinter import image_names
+import pyautogui as pya
+import os
+
+
+
+# Posição X, Y da barra de life que aparece o primeiro bicho na battle list
+POSICAO_BARRA_LIFE_BICHO = (1803, 550)
+# Posição X, Y do quadrado vermelho que fica em volta do bicho quando ele está sendo atacado
+POSICAO_QUADRADO_BICHO = (1767, 547)
+
+def atacar():
+    life_rgb = pya.pixel(*POSICAO_BARRA_LIFE_BICHO)
+    quadrado_rgb = pya.pixel(*POSICAO_QUADRADO_BICHO)
+    # resultado desses dois métodos vão ser uma tupla com 3 posições, contendo R, G, B
+    # quando o bicho estiver sendo atacado, o quadrado RGB vai ter a resposta (255,0,0) -> cor vermelha
+    if quadrado_rgb[0] == 255 and not quadrado_rgb[1] == 255:
+        # nesse caso, nada deve acontecer
+        return True
+    if life_rgb == (0, 0, 0):
+        # caso exista um bicho na battle list, life_rgb vai ser (0,0,0) (preto, borda preta em volta da life)
+        # então ataca
+        pya.press('space')
+        return True
+
+    return False
+    # casso nenhum bicho na battle list , nada precisa acontecer

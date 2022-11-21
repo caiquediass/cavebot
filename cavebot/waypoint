@@ -1,0 +1,14 @@
+from time import sleep
+from tkinter import image_names
+import pyautogui as pya
+import os
+
+
+
+#cavebot
+def andar():
+        if not atacar():
+            pya.leftClick(738,110)
+            sleep(0.5)
+            pya.leftClick(838,110)
+andar()
