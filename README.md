@@ -70,7 +70,6 @@ poetry run python -m pytest
 # 👷 Authors
 
 - [**caiquediass**](https://github.com/caiquediass)([**linkedin**](https://www.linkedin.com/in/caique-dias-b51b53176//)) - Owner - Developer
-- [**lucasmonstro**](http://github.com/lucasmonstro)([**linkedin**](https://www.linkedin.com/in/lucasmonstro/)) -  Developer
 
 
 See also the list of [contributors](../../graphs/contributors) who participated
